@@ -26,7 +26,7 @@ class Biblioteca:
         self.libri = [] #creazione di una lista generica
 
     def aggiungi_libro(self, libro: Libro) -> None:
-        self.libro.append(libro)
+        self.libri.append(libro)
 
     def cerca_per_titolo(self, testo: str) -> Libro:
         testo = testo.lower()
