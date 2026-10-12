@@ -33,3 +33,35 @@ class Scuola:
                 result.append(studente)
 
         return result
+
+    def ricerca_eta(self, eta):
+        result = []
+        for studente in self.studenti:
+            if studente.eta == eta:
+                result.append(studente)
+
+        return result
+
+    def conteggio_studenti(self):
+        return len(self.studenti)
+
+if __name__ == "__main__":
+    studente1 = Studente("Carlo", "Rossi", 14, "Cesena")
+    studente2 = Studente("Arianna", "Esposito", 20, "Cesena")
+    studente3 = Studente("Alberto", "Rossi", 18, "Forli")
+
+    scuola = Scuola("Pascal2")
+    scuola.aggiungi_studente(studente1)
+    scuola.aggiungi_studente(studente2)
+    scuola.aggiungi_studente(studente3)
+
+    print(f"Numero studenti: {scuola.conteggio_studenti()}")
+
+    print("Ricerca per cognome Rossi")
+    for studente in scuola.ricerca_cognome("Rossi"):
+        print(f"stud) {studente}")
+
+    print("Ricerca per eta 14")
+    for studente in scuola.ricerca_eta(14):
+        print(f"stud) {studente}")
+
